@@ -549,4 +549,530 @@ svg {
 .cta-glow {
     position: absolute;
     inset: -4px;
-    b
+    border-radius: var(--radius-full);
+    background: conic-gradient(
+        from 0deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent,
+        rgba(167, 139, 250, 0.3),
+        transparent
+    );
+    animation: rotateBorder 5s linear infinite;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity var(--transition-smooth);
+}
+
+.cta-button:hover .cta-glow {
+    opacity: 1;
+}
+
+/* Tagline after button */
+.profile-tagline-footer {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--accent-cyan);
+    margin-top: 20px;
+    animation: fadeSlideUp 0.6s ease-out 0.75s both;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* --- Footer --- */
+.site-footer {
+    margin-top: 36px;
+    text-align: center;
+    animation: fadeSlideUp 0.6s ease-out 0.95s both;
+}
+
+.site-footer p {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.22);
+    letter-spacing: 0.03em;
+}
+
+/* ============================================
+   ANIMATIONS — Keyframes
+   ============================================ */
+
+/* Floating orb animations */
+@keyframes floatOrb1 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(60px, -40px) scale(1.15);
+    }
+    50% {
+        transform: translate(-20px, -80px) scale(0.9);
+    }
+    75% {
+        transform: translate(-50px, -20px) scale(1.08);
+    }
+}
+
+@keyframes floatOrb2 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(-50px, 30px) scale(1.1);
+    }
+    50% {
+        transform: translate(30px, 60px) scale(0.88);
+    }
+    75% {
+        transform: translate(40px, -20px) scale(1.12);
+    }
+}
+
+@keyframes floatOrb3 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(40px, -50px) scale(1.08);
+    }
+    66% {
+        transform: translate(-35px, 30px) scale(0.92);
+    }
+}
+
+@keyframes floatOrb4 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    20% {
+        transform: translate(-30px, 20px) scale(1.2);
+    }
+    50% {
+        transform: translate(25px, -35px) scale(0.85);
+    }
+    80% {
+        transform: translate(-20px, -15px) scale(1.1);
+    }
+}
+
+@keyframes floatOrb5 {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    30% {
+        transform: translate(-45px, -25px) scale(1.13);
+    }
+    60% {
+        transform: translate(35px, 40px) scale(0.9);
+    }
+}
+
+/* Rotating border gradient */
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Card entrance */
+@keyframes cardEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.96);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Image scale in */
+@keyframes imageScaleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Fade and slide up */
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glow ring pulse */
+@keyframes glowRingPulse {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Shimmer sweep on avatar */
+@keyframes shimmerSweep {
+    0%, 100% {
+        transform: translateX(-100%) rotate(0deg);
+    }
+    50% {
+        transform: translateX(100%) rotate(5deg);
+    }
+}
+
+/* Gradient shift for CTA */
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Orbit dot float */
+@keyframes orbitFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-10px) scale(1.5);
+        opacity: 1;
+    }
+}
+
+/* Decorative node pulse */
+@keyframes nodePulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.85;
+        transform: scale(1.8);
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN — Media Queries
+   ============================================ */
+
+/* Tablet and smaller desktops */
+@media (max-width: 768px) {
+    .profile-card {
+        padding: 32px 22px 28px;
+    }
+
+    .profile-image-section {
+        width: 100px; /* Adjusted for square aspect ratio */
+        height: 100px; /* Adjusted for square aspect ratio */
+        margin-bottom: 22px;
+    }
+
+    .avatar-initials {
+        font-size: 2.5rem;
+    }
+
+    .image-glow-ring {
+        inset: -6px;
+    }
+
+    .badge-ai {
+        font-size: 0.72rem;
+        padding: 5px 14px;
+    }
+
+    .profile-name {
+        font-size: 1.6rem;
+    }
+
+    .profile-tagline {
+        font-size: 0.9rem;
+    }
+
+    .profile-quote {
+        font-size: 0.95rem;
+    }
+
+    .cta-button {
+        font-size: 0.95rem;
+        padding: 13px 26px;
+    }
+
+    .contact-info {
+        gap: 10px;
+    }
+
+    .contact-item {
+        font-size: 0.82rem;
+        padding: 8px 14px;
+    }
+
+    .blur-orb {
+        filter: blur(60px);
+    }
+    .orb-1 {
+        width: 240px;
+        height: 240px;
+    }
+    .orb-2 {
+        width: 200px;
+        height: 200px;
+    }
+    .orb-3 {
+        width: 180px;
+        height: 180px;
+    }
+    .orb-4 {
+        width: 140px;
+        height: 140px;
+    }
+    .orb-5 {
+        width: 180px;
+        height: 180px;
+    }
+
+    .decorative-node {
+        display: none;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .main-container {
+        padding: 16px 12px 24px;
+    }
+
+    #particleCanvas {
+        display: none;
+    }
+
+    .bg-blur-orbs {
+        opacity: 0.8;
+    }
+
+    .profile-card {
+        padding: 24px 14px 20px;
+        border-radius: calc(var(--radius-lg) - 6px);
+    }
+
+    .card-border-wrapper {
+        border-radius: calc(var(--radius-lg) - 2px);
+        width: min(100%, calc(100vw - 22px));
+    }
+
+    .profile-image-section {
+        width: 96px;
+        height: 96px;
+        margin-bottom: 18px;
+    }
+
+    .avatar-initials {
+        font-size: 2rem;
+    }
+
+    .image-glow-ring {
+        inset: -5px;
+    }
+
+    .badge-ai {
+        font-size: 0.68rem;
+        padding: 4px 12px;
+        letter-spacing: 0.06em;
+    }
+
+    .profile-name {
+        font-size: 1.4rem;
+    }
+
+    .profile-tagline {
+        font-size: 0.82rem;
+        max-width: 100%;
+    }
+
+    .profile-quote {
+        font-size: 0.85rem;
+        gap: 10px;
+    }
+
+    .quote-line {
+        width: 20px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .contact-item {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.8rem;
+        padding: 10px 14px;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+
+    .cta-button {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.9rem;
+        padding: 14px 18px;
+        margin-top: 16px;
+    }
+
+    .cta-arrow svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    .orbit-dot {
+        width: 4px;
+        height: 4px;
+    }
+    .orbit-dot-2,
+    .orbit-dot-3 {
+        width: 3px;
+        height: 3px;
+    }
+
+    .blur-orb {
+        filter: blur(45px);
+    }
+    .orb-1 {
+        width: 160px;
+        height: 160px;
+    }
+    .orb-2 {
+        width: 140px;
+        height: 140px;
+    }
+    .orb-3 {
+        width: 120px;
+        height: 120px;
+    }
+    .orb-4 {
+        width: 100px;
+        height: 100px;
+    }
+    .orb-5 {
+        width: 130px;
+        height: 130px;
+    }
+
+    .site-footer p {
+        font-size: 0.7rem;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .profile-card {
+        padding: 20px 12px 18px;
+    }
+
+    .profile-image-section {
+        width: 84px;
+        height: 84px;
+        margin-bottom: 14px;
+    }
+
+    .avatar-initials {
+        font-size: 1.6rem;
+    }
+
+    .profile-name {
+        font-size: 1.25rem;
+    }
+
+    .profile-tagline {
+        font-size: 0.76rem;
+    }
+
+    .badge-ai {
+        font-size: 0.64rem;
+        padding: 3px 10px;
+    }
+
+    .cta-button {
+        font-size: 0.82rem;
+        padding: 12px 16px;
+    }
+
+    .contact-item {
+        font-size: 0.74rem;
+        padding: 8px 12px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .main-container {
+        max-width: 680px;
+    }
+
+    .card-border-wrapper {
+        max-width: 560px;
+    }
+
+    .profile-card {
+        padding: 48px 40px 44px;
+    }
+
+    .profile-image-section {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 32px;
+    }
+
+    .avatar-initials {
+        font-size: 3.2rem;
+    }
+
+    .blur-orb {
+        filter: blur(110px);
+    }
+    .orb-1 {
+        width: 450px;
+        height: 450px;
+    }
+    .orb-2 {
+        width: 380px;
+        height: 380px;
+    }
+}
+
+/* Accessibility: Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .blur-orb {
+        animation: none !important;
+    }
+
+    #particleCanvas {
+        opacity: 0.35;
+    }
+}
